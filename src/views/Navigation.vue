@@ -10,7 +10,7 @@
                     <RouterLink to="/about">About</RouterLink>
                 </a>
 
-                <a class="nav-link disabled" aria-disabled="true">PORTERIAN LIBRARY MANAGEMENT SYSTEM</a>
+                <a class="nav-link disabled" aria-disabled="true">PORTERIAN LIBRARY MANAGEMENT SYSTEM (PLMS)</a>
                 <a class="nav-link disabled" aria-disabled="true">PLMS</a>
 
                     <ul class="navbar-nav ml-auto">
