@@ -11,6 +11,7 @@
                 </a>
 
                 <a class="nav-link disabled" aria-disabled="true">PORTERIAN LIBRARY MANAGEMENT SYSTEM</a>
+                <a class="nav-link disabled" aria-disabled="true">PLMS</a>
 
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
