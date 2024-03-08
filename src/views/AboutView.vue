@@ -1,12 +1,12 @@
 <template>
   <div class="aboutpage">
-    <h1>This is an about page</h1>
+    <h1>JOHN JOSEPH P. ASORO</h1>
   </div>
 </template>
 
 <style>
 @media (min-width: 1024px) {
-  .about {
+  .aboutpage {
     min-height: 100vh;
     display: flex;
     align-items: center;
