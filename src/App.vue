@@ -5,20 +5,7 @@ import Navigation from './views/Navigation.vue';
 
 <template>
   <Navigation />
-  <!-- <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/home">Home</RouterLink>
-        <RouterLink to="/aboutpage">About</RouterLink>
-        <RouterLink to="/login">Login</RouterLink>
-      </nav>
-    </div>
-  </header> -->
-
+  <TheWelcome />
 </template>
 
 <style scoped>

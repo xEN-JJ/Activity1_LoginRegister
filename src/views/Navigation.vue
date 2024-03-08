@@ -2,41 +2,40 @@
     <header>
         <div class="nav-container">
             <nav class="nav">
-                <a class="nav-link active" aria-current="page" href="#">PLMS</a>
-                <a class="nav-link" href="../views/HomeView.vue">
-                    <RouterLink to="/home">Home</RouterLink>
-                </a>
-                <a class="nav-link" href="../views/AboutView.vue">
-                    <RouterLink to="/about">About</RouterLink>
-                </a>
+                <div class="left-side">
+                    <div class="nav-links">
+                        <a class="nav-link" href="../views/HomeView.vue">
+                            <RouterLink to="/home">Home</RouterLink>
+                        </a>
+                        <a class="nav-link" href="../views/AboutView.vue">
+                            <RouterLink to="/about">About</RouterLink>
+                        </a>
+                    </div>
+                    <div class="nav-link-disabled">
+                        <span class="small">PORTERIAN LIBRARY MANAGEMENT SYSTEM</span>
+                    </div>
+                </div>
 
-                <a class="nav-link disabled" aria-disabled="true">PORTERIAN LIBRARY MANAGEMENT SYSTEM (PLMS)</a>
-                <a class="nav-link disabled" aria-disabled="true">PLMS</a>
-
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <RouterLink to="/login" class="nav-link-authentication">Login</RouterLink>
-                        </li>
-                        <li class="nav-item">
-                            <RouterLink to="/signup" class="nav-link-authentication">Sign Up</RouterLink>
-                        </li>
-                    </ul>
+                <div class="right-side">
+                    <div class="nav-links">
+                        <RouterLink to="/login" class="nav-link-authentication">Login</RouterLink>
+                        <RouterLink to="/signup" class="nav-link-authentication" style="margin-right: 1rem;">Sign Up
+                        </RouterLink>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
     <RouterView />
 </template>
-  
-<script>
 
+<script>
 // Your script code
 </script>
-  
+
 <style scoped>
 header {
-    /* Existing styles */
     margin-top: 0;
-    /* Remove or adjust as needed */
 }
 
 .nav-container {
@@ -85,6 +84,37 @@ header {
     color: var(--vt-c-indigo);
 }
 
+.left-side {
+    display: flex;
+    align-items: center;
+}
+
+.right-side {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links .nav-link-authentication {
+    margin-left: 1rem;
+}
+
+.nav-link-disabled {
+    color: var(--vt-c-text-dark-2);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.nav-link-disabled .small {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
 @media (min-width: 1024px) {
     header {
         /* Existing styles */
@@ -102,6 +132,20 @@ header {
         max-width: 1280px;
         margin: 0 auto;
         padding: 0 2rem;
+    }
+
+    .left-side {
+        flex-grow: 1;
+    }
+
+    .right-side {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .right-side .nav-links {
+        margin-left: 1rem;
     }
 }
 </style>
