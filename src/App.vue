@@ -3,7 +3,7 @@ import NavigationView from '../src/views/NavigationView.vue'
 </script>
 
 <template>
-  <Navigation />
+  <NavigationView />
   <TheWelcome />
 </template>
 

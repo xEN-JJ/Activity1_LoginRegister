@@ -28,10 +28,6 @@
   <RouterView />
 </template>
 
-<script>
-// Your script code
-</script>
-
 <style scoped>
 header {
   margin-top: 0;
