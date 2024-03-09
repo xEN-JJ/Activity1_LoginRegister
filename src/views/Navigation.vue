@@ -59,7 +59,7 @@ header {
     text-decoration: none;
     color: var(--vt-c-text-light-1);
     transition: 0.4s;
-    padding: 3px;
+    padding: 20px;
 }
 
 .nav-link.active {
@@ -92,6 +92,7 @@ header {
 .right-side {
     display: flex;
     align-items: center;
+    margin-right: 20px;
 }
 
 .nav-links {

@@ -1,11 +1,12 @@
 <template>
     <div class="container">
         <form>
+            <h1 class="form-header">LOG IN</h1>
             <div class="mb-3">
                 <div class="label-container">
                     <label for="exampleInputEmail1" class="form-label">Email</label>
                     <div class="link-signup">
-                        Need an account? <a href="#" class="sign-up">SIGN UP</a>
+                        Need an account? <RouterLink to="/signup" class="signup">SIGN UP</RouterLink>
                     </div>
                 </div>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
@@ -13,21 +14,56 @@
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" />
-                <div class="form-text">10 Maximum length, at least one uppercase letter, at least one lowercase letter,
-                    and at least one digit.</div>
+                <div class="form-text">Password should have at least one uppercase letter, one lowercase letter, one
+                    digit, and be between 8 and 10 characters in length.</div>
             </div>
             <div class="mb-3">
                 <a href="#" class="forget-password">Forgot Password?</a>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" @click="login">LOG IN</button>
         </form>
     </div>
 </template>
 
 <script>
 export default {
+    methods: {
+        login() {
+            const emailInput = document.getElementById('exampleInputEmail1');
+            const passwordInput = document.getElementById('exampleInputPassword1');
 
-}
+            const email = emailInput.value;
+            const password = passwordInput.value;
+
+            if (!email || !password) {
+                alert('Please enter your email and password.');
+
+                emailInput.value = ''; // Clear email input
+                passwordInput.value = ''; // Clear password input
+
+                return;
+            }
+
+            const savedData = localStorage.getItem('signupData');
+
+            if (savedData) {
+                const signupData = JSON.parse(savedData);
+
+                if (email === signupData.email && password === signupData.password) {
+                    alert('Logged in successfully!');
+                    // Implement your logic for successful login (e.g., redirect to a new page)
+                    this.$router.push("/dashboard");
+                    return;
+                } else {
+                    alert('Invalid email or password.');
+                    passwordInput.value = ''; // Clear password input
+                }
+            } else {
+                alert('Please sign up first.');
+            }
+        }
+    }
+};
 </script>
 
 <style scoped>
@@ -42,6 +78,13 @@ export default {
 
 .form-text {
     color: #fff;
+}
+
+.form-header {
+    color: #138496;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
 }
 
 .label-container {
@@ -77,7 +120,12 @@ export default {
 }
 
 .btn-primary {
+    background-color: #3da385;
     margin-top: 0;
     float: right;
+}
+
+.text-btn-primary {
+    color: #fff;
 }
 </style>
