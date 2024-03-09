@@ -1,6 +1,5 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import Navigation from './views/Navigation.vue';
+import NavigationView from '../src/views/NavigationView.vue'
 </script>
 
 <template>
